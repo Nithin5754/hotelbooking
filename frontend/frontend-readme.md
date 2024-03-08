@@ -11,4 +11,6 @@ vite setup for react
 
  # packages
 
-      
+ npm i react-hook-form
+
+          
