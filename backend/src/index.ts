@@ -5,6 +5,8 @@ import cors from 'cors'
 import 'dotenv/config'
 import mongoose from "mongoose";
 
+import userRoutes from './routes/usersRoutes'
+
 
 const app=express()
 app.use(express.json())
@@ -15,11 +17,8 @@ app.use(cors())
 mongoose.connect(process.env.MONGO_CONNECTION_STRING as string);
 
 
-app.get('/api/test',async(req:Request,res:Response)=>{
-  res.send("testing")
-})
+app.use("/api/users",userRoutes)
 
 
-
-app.listen(7001,()=>{
-  console.log("server started:",'http://localhost:7001/')})
+app.listen(4000,()=>{
+  console.log("server started:",'http://localhost:4000/')})
