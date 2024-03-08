@@ -28,11 +28,11 @@ const registerUser = async (req: Request, res: Response) => {
       maxAge: 86400000,
     });
 
-    res.sendStatus(200)
+   return  res.status(200).send({ message: "Registration ok new user created" })
   } catch (error) {
     console.log("error creating new user  :", error);
 
-    res.json({ message: "something went wrong" });
+    res.status(500).send({ message: "something went wrong" });
   }
 };
 
