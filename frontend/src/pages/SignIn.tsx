@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import * as apiClient from "../api/api-client";
 import { useMutation, useQueryClient } from "react-query";
 import { useAppContext } from "../context/AppContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export type SignInFormData = {
   email: string;
@@ -24,7 +24,7 @@ const SignIn = () => {
       console.log("user has been logged in");
       await queryClient.invalidateQueries("validateToken");
 
-      showToast({ message: "login sucessfully", type: "SUCCESS" });
+      showToast({ message: "Sign in Successful!", type: "SUCCESS" });
       navigate("/");
     },
     onError: (error: Error) => {
@@ -38,7 +38,7 @@ const SignIn = () => {
 
   return (
     <form className="flex flex-col gap-5" onClick={onSubmit}>
-      <h2 className="text-3xl font-bold">sign in</h2>
+      <h2 className="text-3xl font-bold">Sign In</h2>
       {/* LOGIN EMAIL TYPING INPUT SECTION START HERE */}
       <label htmlFor="" className="text-gray-700 text-sm font-bold flex-1">
         Email
@@ -67,12 +67,15 @@ const SignIn = () => {
         <span className="text-red-500">{errors?.password?.message}</span>
       </label>
 
-      <span>
+      <span className="flex items-center justify-between">
+        <span className="text-sm">
+          Not regestered? <Link className="underline" to={'/register'}>Create an account here</Link>
+        </span>
         <button
           type="submit"
           className="bg-blue-600 text-white p-2 font-bold hover:bg-blue-500"
         >
-          submit
+           Login
         </button>
       </span>
     </form>

@@ -33,9 +33,7 @@ const onSubmit=()=>{
 }
 
   return (
-     <form >
-      <button onClick={onSubmit} className="text-blue-600 px-3 font-bold hover:bg-blue-600 hover:text-white" type="button">log out</button>
-     </form>
+      <button onClick={onSubmit}  className="flex items-center text-white px-3 font-bold hover:bg-blue-600" type="button">Sign Out</button>
   )
 }
 export default SignOutButton

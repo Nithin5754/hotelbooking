@@ -6,6 +6,12 @@ backend --- express js
 
 - entry point -- index.js to ./src/index/ts
 
+npx tsc --init
+
+tsconfig file add
+     "outDir": "./dist",
+     
+
 # packages used in backend
 
 npm i express ,cors,dotenv,mongodb,mongoose
@@ -24,5 +30,10 @@ npm i @types/bcryptjs @types/jsonwebtoken --save-dev
 
 npm i @types/cookie-parser
 
-2TckPoQcxxvRdVfS
+
+
+# Testing E2E
+
+PACKAGES
+ - npm i cross-env
 

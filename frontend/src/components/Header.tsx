@@ -19,14 +19,13 @@ const Header = () => {
            <Link className="flex items-center text-white px-3 font-bold hover:bg-blue-600" to="/my-bookings">my bookings</Link>
            
            <Link  className="flex items-center text-white px-3 font-bold hover:bg-blue-600" to="/my-hotels">my Hotels</Link>
-
             <SignOutButton/>
            </>) : (<>
            <Link
             to={"/sign-in"}
             className="flex  items-center bg-white text-blue-600 px-3 font-bold rounded-md hover:bg-gray-100"
           >
-            sign in
+              Sign In
           </Link>
            </>)}
     
