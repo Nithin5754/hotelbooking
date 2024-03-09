@@ -14,11 +14,15 @@ npm i bcrypt jsonwebtoken
 
 express-validator
 
+ npm i cookie-parser
+
 
 # install dev dependency
  npm i @types/cors @types/express @types/node ts-node typescript nodemon --save-dev
 
 npm i @types/bcryptjs @types/jsonwebtoken --save-dev
+
+npm i @types/cookie-parser
 
 2TckPoQcxxvRdVfS
 

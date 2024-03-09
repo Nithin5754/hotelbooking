@@ -3,6 +3,16 @@ import User from "../models/user";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
+
+declare global {
+  namespace Express {
+    interface Request {
+      userId:string
+    }
+  }
+}
+
+
 const authUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
   try {
@@ -36,4 +46,20 @@ const authUser = async (req: Request, res: Response) => {
   }
 };
 
-export { authUser };
+
+const validateToken= async (req: Request, res: Response) => {
+    res.status(200).send({userId:req.userId})
+}
+
+
+const logOut= (req: Request, res: Response)=>{
+
+   res.cookie('auth_token'," ",{
+    expires:new Date(0)
+   })
+
+  res.send();
+}
+
+
+export { authUser,validateToken,logOut };

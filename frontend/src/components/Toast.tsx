@@ -21,8 +21,8 @@ useEffect(()=>{
 
 
   return (
-  <div className={styles}>
-      <div className="flex justify-center items-center">
+  <div className={`${styles} animate-bounce`} >
+      <div className="flex justify-center items-center ">
         <span className="text-lg font-semibold" >{message}</span>
       </div>
   </div>
