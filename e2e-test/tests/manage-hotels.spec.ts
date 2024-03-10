@@ -53,3 +53,21 @@ await expect(page.getByText("Hotel saved!")).toBeVisible()
 
 
 });
+
+
+test("should display hotels", async ({ page }) => {
+  await page.goto(`${UI_URL}my-hotels`);
+  await expect(page.getByRole("heading", { name: "my Hotels" })).toBeVisible();
+  await expect(page.getByText("Dublin Getaways")).toBeVisible()
+  await expect(page.getByText("Lorem ipsum dolor sit amet, consectetur")).toBeVisible();
+  await expect(page.getByText("Dublin Getaways")).toBeVisible()
+
+
+
+  await expect( page.getByRole("link",{name:"view Details"}).first()).toBeVisible();
+
+  await expect( page.getByRole("link",{name:"Add hotel"})).toBeVisible()
+
+
+
+})

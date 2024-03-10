@@ -13,5 +13,5 @@ vite setup for react
 
  npm i react-hook-form  
  react-query
-
+npm i react-icons
           
