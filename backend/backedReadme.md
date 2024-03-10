@@ -22,6 +22,10 @@ express-validator
 
  npm i cookie-parser
 
+ npm i cloudinary
+
+ npm i multer
+
 
 # install dev dependency
  npm i @types/cors @types/express @types/node ts-node typescript nodemon --save-dev
@@ -30,7 +34,7 @@ npm i @types/bcryptjs @types/jsonwebtoken --save-dev
 
 npm i @types/cookie-parser
 
-
+npm i --save-dev @types/multer
 
 # Testing E2E
 

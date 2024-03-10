@@ -14,6 +14,8 @@ declare global {
 
 
 const authUser = async (req: Request, res: Response) => {
+  console.log("login");
+  
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
