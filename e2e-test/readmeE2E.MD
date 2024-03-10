@@ -12,3 +12,11 @@ npm init playwright@latest
    # download vscode extenstion for smooth the testing
     
     playwright test for vscode(microsoft)
+
+
+
+# if you want to do path.join() _dirname or use node modules in testing install
+
+ # npm i typescript --save-dev   
+
+ # npx tsc --init
