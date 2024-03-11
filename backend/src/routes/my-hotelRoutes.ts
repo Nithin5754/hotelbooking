@@ -1,5 +1,5 @@
 import express from 'express'
-import { createNewHotels, viewHotels } from '../controllers/my-hotelController';
+import { createNewHotels, singleHotelDetails, viewHotels } from '../controllers/my-hotelController';
 
 import multer from 'multer'
 import { verifyToken } from '../middleware/verifyTokenMiddleware';
@@ -24,7 +24,7 @@ const upload=multer({
 router.get('/',verifyToken,viewHotels)
 router.post('/',verifyToken,hotelValidationRules(),upload.array("imageFiles",6),createNewHotels);
 
-
+router.get('/:id',verifyToken,singleHotelDetails)
 
 
 export default router

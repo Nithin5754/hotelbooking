@@ -66,5 +66,23 @@ const viewHotels=async(req:Request,res:Response)=>{
 }
 
 
+const singleHotelDetails=async(req:Request,res:Response)=>{
+   const id=req.params.id.toString();
+   try {
+    const hotel=await Hotel.findOne({_id:id,userId:req.userId})
 
-export {createNewHotels,viewHotels}
+    if(!hotel){
+      return res.status(500).json({message:"error  hotels fetched by id"})
+
+    }
+
+    
+    res.json(hotel)
+   } catch (error) {
+      res.status(500).json({message:"error  hotels fetched by id"})
+
+   }
+}
+
+
+export {createNewHotels,viewHotels,singleHotelDetails}

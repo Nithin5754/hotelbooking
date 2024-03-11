@@ -103,3 +103,20 @@ export const fetchMyHotels = async ():Promise<HotelType[]> => {
   }
 
 };
+
+
+
+export const fetchMyHotelById=async(hotelId:string):Promise<HotelType>=>{
+  const response = await fetch(`${API_BASE_URL}/api/myHotels/${hotelId}`, {
+    method: "GET",
+    credentials: "include",
+
+  });
+
+  if (!response.ok) {
+    throw new Error("error in FETCHING hotel by id");
+  }
+
+
+return response.json()
+}
